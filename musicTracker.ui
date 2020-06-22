@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1012</width>
+    <height>855</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Music Tracker</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QMdiArea" name="mdiArea">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>991</width>
+      <height>811</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1012</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMain">
+    <property name="title">
+     <string>Main</string>
+    </property>
+    <addaction name="actionAdicionar_Remover_um_artista"/>
+    <addaction name="actionEditar_disco"/>
+    <addaction name="actionApagar_todos_os_dados"/>
+    <addaction name="actionFechar"/>
+   </widget>
+   <widget class="QMenu" name="menuPesquisar">
+    <property name="title">
+     <string>Pesquisar</string>
+    </property>
+    <addaction name="actionPor_disco"/>
+    <addaction name="actionPor_artista"/>
+    <addaction name="actionPor_gravadora"/>
+    <addaction name="actionPor_melhores"/>
+    <addaction name="actionPor_GOATs"/>
+   </widget>
+   <widget class="QMenu" name="menuEstatistica">
+    <property name="title">
+     <string>Estatistica</string>
+    </property>
+    <addaction name="actionHoras_de_musica"/>
+    <addaction name="actionQuantidade_de_discos"/>
+    <addaction name="actionQuantidade_de_musicas"/>
+    <addaction name="actionQuantida_de_gravadoras"/>
+   </widget>
+   <widget class="QMenu" name="menuGrafico">
+    <property name="title">
+     <string>Graficos</string>
+    </property>
+    <addaction name="actionDiferentes_tipos_de_musicas"/>
+   </widget>
+   <addaction name="menuMain"/>
+   <addaction name="menuPesquisar"/>
+   <addaction name="menuEstatistica"/>
+   <addaction name="menuGrafico"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionPor_disco">
+   <property name="text">
+    <string>Por disco</string>
+   </property>
+  </action>
+  <action name="actionPor_artista">
+   <property name="text">
+    <string>Por artista</string>
+   </property>
+  </action>
+  <action name="actionPor_gravadora">
+   <property name="text">
+    <string>Por gravadora</string>
+   </property>
+  </action>
+  <action name="actionPor_melhores">
+   <property name="text">
+    <string>Por melhores</string>
+   </property>
+  </action>
+  <action name="actionPor_GOATs">
+   <property name="text">
+    <string>Por GOATs</string>
+   </property>
+  </action>
+  <action name="actionHoras_de_musica">
+   <property name="text">
+    <string>Horas de musica</string>
+   </property>
+  </action>
+  <action name="actionQuantidade_de_discos">
+   <property name="text">
+    <string>Quantidade de discos</string>
+   </property>
+  </action>
+  <action name="actionQuantidade_de_musicas">
+   <property name="text">
+    <string>Quantidade de musicas</string>
+   </property>
+  </action>
+  <action name="actionQuantida_de_gravadoras">
+   <property name="text">
+    <string>Quantida de gravadoras</string>
+   </property>
+  </action>
+  <action name="actionDiferentes_tipos_de_musicas">
+   <property name="text">
+    <string>Diferentes tipos de musicas</string>
+   </property>
+  </action>
+  <action name="actionAdicionar_disco">
+   <property name="text">
+    <string>Adicionar disco</string>
+   </property>
+  </action>
+  <action name="actionRemover_disco">
+   <property name="text">
+    <string>Remover um disco</string>
+   </property>
+  </action>
+  <action name="actionEditar_disco">
+   <property name="text">
+    <string>Editar disco</string>
+   </property>
+  </action>
+  <action name="actionApagar_todos_os_dados">
+   <property name="text">
+    <string>Apagar todos os dados</string>
+   </property>
+  </action>
+  <action name="actionAdicionar_Remover_um_artista">
+   <property name="text">
+    <string>Adicionar/Remover disco</string>
+   </property>
+  </action>
+  <action name="actionFechar">
+   <property name="text">
+    <string>Fechar</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
