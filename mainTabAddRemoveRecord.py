@@ -1,9 +1,9 @@
 from PyQt5.QtWidgets import QDialog, QMessageBox
-from addRemoveRecords import Ui_Dialog
+from addRemoveRecord import Ui_Dialog
 from banco import db_connect
 from mysql.connector.errors import ProgrammingError
 
-class AddRemoveWindow(QDialog, Ui_Dialog):
+class AddRemoveRecordWindow(QDialog, Ui_Dialog):
     def __init__(self):
         QDialog.__init__(self)
         self.ui = Ui_Dialog()

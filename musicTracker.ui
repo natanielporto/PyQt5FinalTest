@@ -60,7 +60,7 @@
     <addaction name="actionHoras_de_musica"/>
     <addaction name="actionQuantidade_de_discos"/>
     <addaction name="actionQuantidade_de_musicas"/>
-    <addaction name="actionQuantida_de_gravadoras"/>
+    <addaction name="actionQuantidade_de_gravadoras"/>
    </widget>
    <widget class="QMenu" name="menuGrafico">
     <property name="title">
@@ -114,9 +114,9 @@
     <string>Quantidade de musicas</string>
    </property>
   </action>
-  <action name="actionQuantida_de_gravadoras">
+  <action name="actionQuantidade_de_gravadoras">
    <property name="text">
-    <string>Quantida de gravadoras</string>
+    <string>Quantidade de gravadoras</string>
    </property>
   </action>
   <action name="actionDiferentes_tipos_de_musicas">
