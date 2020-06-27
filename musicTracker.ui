@@ -57,21 +57,12 @@
     <property name="title">
      <string>Estatistica</string>
     </property>
-    <addaction name="actionHoras_de_musica"/>
-    <addaction name="actionQuantidade_de_discos"/>
-    <addaction name="actionQuantidade_de_musicas"/>
-    <addaction name="actionQuantidade_de_gravadoras"/>
-   </widget>
-   <widget class="QMenu" name="menuGrafico">
-    <property name="title">
-     <string>Graficos</string>
-    </property>
-    <addaction name="actionDiferentes_tipos_de_musicas"/>
+    <addaction name="actionPor_graficos"/>
+    <addaction name="actionPor_numeros"/>
    </widget>
    <addaction name="menuMain"/>
    <addaction name="menuPesquisar"/>
    <addaction name="menuEstatistica"/>
-   <addaction name="menuGrafico"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionPor_disco">
@@ -121,7 +112,7 @@
   </action>
   <action name="actionDiferentes_tipos_de_musicas">
    <property name="text">
-    <string>Diferentes tipos de musicas</string>
+    <string>Estatisticas em graficos</string>
    </property>
   </action>
   <action name="actionAdicionar_disco">
@@ -152,6 +143,16 @@
   <action name="actionFechar">
    <property name="text">
     <string>Fechar</string>
+   </property>
+  </action>
+  <action name="actionPor_graficos">
+   <property name="text">
+    <string>Por graficos</string>
+   </property>
+  </action>
+  <action name="actionPor_numeros">
+   <property name="text">
+    <string>Por numeros</string>
    </property>
   </action>
  </widget>
