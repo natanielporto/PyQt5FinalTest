@@ -5,6 +5,7 @@ from mainTabAddRemoveRecord import AddRemoveRecordWindow
 from mainTabUpdateRecord import UpdateRecordWindow
 from mainEraseAllRecords import EraseAllRecordsWindow
 from mainSearchRecord import SearchRecordWindow
+from mainSearchArtist import SearchArtistWindow
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -16,6 +17,7 @@ class MainWindow(QMainWindow):
         self.ui.actionEditar_disco.triggered.connect(self.mainTabUpdateRecord)
         self.ui.actionApagar_todos_os_dados.triggered.connect(self.mainTabEraseAllRecords)
         self.ui.actionPor_disco.triggered.connect(self.mainSearchRecord)
+        self.ui.actionPor_artista.triggered.connect(self.mainSearchArtist)
         
     def mainTabAddRemoveRecord(self):
         sub = QMdiSubWindow()
@@ -44,6 +46,14 @@ class MainWindow(QMainWindow):
     def mainSearchRecord(self):
         sub = QMdiSubWindow()
         updt = SearchRecordWindow()
+        sub.setWidget(updt)
+        self.ui.mdiArea.addSubWindow(sub)
+        sub.setFixedSize(545, 550)
+        sub.show()
+
+    def mainSearchArtist(self):
+        sub = QMdiSubWindow()
+        updt = SearchArtistWindow()
         sub.setWidget(updt)
         self.ui.mdiArea.addSubWindow(sub)
         sub.setFixedSize(545, 550)
