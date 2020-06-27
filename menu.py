@@ -1,14 +1,16 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMdiSubWindow
-from musicTracker import Ui_MainWindow
-from mainTabAddRemoveRecord import AddRemoveRecordWindow
-from mainTabUpdateRecord import UpdateRecordWindow
-from mainEraseAllRecords import EraseAllRecordsWindow
-from mainSearchRecord import SearchRecordWindow
-from mainSearchArtist import SearchArtistWindow
-from mainSearchRecordLabel import SearchRecordLabelWindow
-from mainSearchTop import SearchTopWindow
-from mainSearchGoat import SearchGoatWindow
+from music_tracker import Ui_MainWindow
+from main_tab_add_remove_record import Add_remove_record_window
+from main_tab_update_record import Update_record_window
+from main_erase_all_records import Erase_all_records_window
+from main_search_record import Search_record_window
+from main_search_artist import Search_artist_window
+from main_search_record_label import Search_record_label_window
+from main_search_top import Search_top_window
+from main_search_goat import Search_goat_window
+from main_show_statistics_text import Show_statistics_text_window
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -16,78 +18,92 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.ui.actionAdicionar_Remover_um_artista.triggered.connect(self.mainTabAddRemoveRecord)
-        self.ui.actionEditar_disco.triggered.connect(self.mainTabUpdateRecord)
-        self.ui.actionApagar_todos_os_dados.triggered.connect(self.mainTabEraseAllRecords)
-        self.ui.actionPor_disco.triggered.connect(self.mainSearchRecord)
-        self.ui.actionPor_artista.triggered.connect(self.mainSearchArtist)
-        self.ui.actionPor_gravadora.triggered.connect(self.mainSearchRecordLabel)
-        self.ui.actionPor_melhores.triggered.connect(self.mainSearchTop)
-        self.ui.actionPor_GOATs.triggered.connect(self.mainSearchGoat)
-        
-    def mainTabAddRemoveRecord(self):
+        self.ui.actionAdicionar_Remover_um_artista.triggered.connect(
+            self.main_tab_add_remove_record
+        )
+        self.ui.actionEditar_disco.triggered.connect(self.main_tab_update_record)
+        self.ui.actionApagar_todos_os_dados.triggered.connect(
+            self.main_tab_erase_all_records
+        )
+        self.ui.actionPor_disco.triggered.connect(self.main_search_record)
+        self.ui.actionPor_artista.triggered.connect(self.main_search_artist)
+        self.ui.actionPor_gravadora.triggered.connect(self.main_search_record_label)
+        self.ui.actionPor_melhores.triggered.connect(self.main_search_top)
+        self.ui.actionPor_GOATs.triggered.connect(self.main_search_goat)
+        self.ui.actionPor_numeros.triggered.connect(self.main_show_statistics_text)
+
+    def main_tab_add_remove_record(self):
         sub = QMdiSubWindow()
-        addRm = AddRemoveRecordWindow()
-        sub.setWidget(addRm)
+        add_rm = Add_remove_record_window()
+        sub.setWidget(add_rm)
         self.ui.mdiArea.addSubWindow(sub)
         sub.setFixedSize(545, 550)
         sub.show()
 
-    def mainTabUpdateRecord(self):
+    def main_tab_update_record(self):
         sub = QMdiSubWindow()
-        updt = UpdateRecordWindow()
+        updt = Update_record_window()
         sub.setWidget(updt)
         self.ui.mdiArea.addSubWindow(sub)
         sub.setFixedSize(545, 550)
         sub.show()
 
-    def mainTabEraseAllRecords(self):
+    def main_tab_erase_all_records(self):
         sub = QMdiSubWindow()
-        updt = EraseAllRecordsWindow()
+        updt = Erase_all_records_window()
         sub.setWidget(updt)
         self.ui.mdiArea.addSubWindow(sub)
         sub.setFixedSize(545, 550)
         sub.show()
 
-    def mainSearchRecord(self):
+    def main_search_record(self):
         sub = QMdiSubWindow()
-        updt = SearchRecordWindow()
+        updt = Search_record_window()
         sub.setWidget(updt)
         self.ui.mdiArea.addSubWindow(sub)
         sub.setFixedSize(545, 550)
         sub.show()
 
-    def mainSearchArtist(self):
+    def main_search_artist(self):
         sub = QMdiSubWindow()
-        updt = SearchArtistWindow()
+        updt = Search_artist_window()
         sub.setWidget(updt)
         self.ui.mdiArea.addSubWindow(sub)
         sub.setFixedSize(545, 550)
         sub.show()
 
-    def mainSearchRecordLabel(self):
+    def main_search_record_label(self):
         sub = QMdiSubWindow()
-        updt = SearchRecordLabelWindow()
+        updt = Search_record_label_window()
         sub.setWidget(updt)
         self.ui.mdiArea.addSubWindow(sub)
         sub.setFixedSize(545, 550)
         sub.show()
 
-    def mainSearchTop(self):
+    def main_search_top(self):
         sub = QMdiSubWindow()
-        updt = SearchTopWindow()
+        updt = Search_top_window()
         sub.setWidget(updt)
         self.ui.mdiArea.addSubWindow(sub)
         sub.setFixedSize(545, 550)
         sub.show()
 
-    def mainSearchGoat(self):
+    def main_search_goat(self):
         sub = QMdiSubWindow()
-        updt = SearchGoatWindow()
+        updt = Search_goat_window()
         sub.setWidget(updt)
         self.ui.mdiArea.addSubWindow(sub)
         sub.setFixedSize(545, 550)
         sub.show()
+
+    def main_show_statistics_text(self):
+        sub = QMdiSubWindow()
+        updt = Show_statistics_text_window()
+        sub.setWidget(updt)
+        self.ui.mdiArea.addSubWindow(sub)
+        sub.setFixedSize(545, 550)
+        sub.show()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -96,4 +112,3 @@ if __name__ == "__main__":
     window.show()
 
     sys.exit(app.exec_())
-

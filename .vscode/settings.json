@@ -1,0 +1,6 @@
+{
+  "editor.formatOnSave": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/Home/.local/bin",
+  "python.pythonPath": "/bin/python3"
+}
