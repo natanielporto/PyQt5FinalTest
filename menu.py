@@ -1,8 +1,8 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMdiSubWindow
 from music_tracker import Ui_MainWindow
-from main_tab_add_remove_record import Add_remove_record_window
-from main_tab_update_record import Update_record_window
+from main_add_remove_record import Add_remove_record_window
+from main_update_record import Update_record_window
 from main_erase_all_records import Erase_all_records_window
 from main_search_record import Search_record_window
 from main_search_artist import Search_artist_window
@@ -19,11 +19,11 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
         self.ui.actionAdicionar_Remover_um_artista.triggered.connect(
-            self.main_tab_add_remove_record
+            self.main_add_remove_record
         )
-        self.ui.actionEditar_disco.triggered.connect(self.main_tab_update_record)
+        self.ui.actionEditar_disco.triggered.connect(self.main_update_record)
         self.ui.actionApagar_todos_os_dados.triggered.connect(
-            self.main_tab_erase_all_records
+            self.main_erase_all_records
         )
         self.ui.actionPor_disco.triggered.connect(self.main_search_record)
         self.ui.actionPor_artista.triggered.connect(self.main_search_artist)
@@ -32,7 +32,7 @@ class MainWindow(QMainWindow):
         self.ui.actionPor_GOATs.triggered.connect(self.main_search_goat)
         self.ui.actionPor_numeros.triggered.connect(self.main_show_statistics_text)
 
-    def main_tab_add_remove_record(self):
+    def main_add_remove_record(self):
         sub = QMdiSubWindow()
         add_rm = Add_remove_record_window()
         sub.setWidget(add_rm)
@@ -40,7 +40,7 @@ class MainWindow(QMainWindow):
         sub.setFixedSize(545, 550)
         sub.show()
 
-    def main_tab_update_record(self):
+    def main_update_record(self):
         sub = QMdiSubWindow()
         updt = Update_record_window()
         sub.setWidget(updt)
@@ -48,7 +48,7 @@ class MainWindow(QMainWindow):
         sub.setFixedSize(545, 550)
         sub.show()
 
-    def main_tab_erase_all_records(self):
+    def main_erase_all_records(self):
         sub = QMdiSubWindow()
         updt = Erase_all_records_window()
         sub.setWidget(updt)
