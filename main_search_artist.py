@@ -15,8 +15,6 @@ class Search_artist_window(QDialog, Ui_Dialog):
 
         self.ui.search_btn.clicked.connect(self.search_artist)
 
-    some_dict = ["me", "myself", "you", "notI", 4040402402, "sure"]
-
     def error(self):
         msg = QMessageBox()
         msg.setWindowTitle("Erro:")

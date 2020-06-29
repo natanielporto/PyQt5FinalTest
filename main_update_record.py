@@ -16,7 +16,7 @@ class Update_record_window(QDialog, Ui_Dialog):
 
     def update_record(self):
         record = str(self.ui.update_input.text())
-        sql = f'SELECT disco, artista, duracao, faixas, gravadora, nota, goat FROM metal WHERE disco = "{record}"'
+        sql = f"""SELECT disco, artista, duracao, faixas, gravadora, nota, goat FROM metal WHERE disco = '{record}'"""
 
         with db_connect() as db:
             try:
@@ -64,8 +64,7 @@ class Update_record_window(QDialog, Ui_Dialog):
         if goat:
             goat_result = True
 
-        sql = f'UPDATE metal SET disco = "{disco}", artista = "{artista}", duracao = "{duracao}", faixas = "{faixas}", gravadora = "{gravadora}", nota = "{nota}", goat = "{goat}" WHERE disco = "{record}"'
-
+        sql = f"""UPDATE metal SET disco = '{disco}', artista = '{artista}', duracao = '{duracao}', faixas = {faixas}, gravadora = '{gravadora}', nota = {nota}, goat = {goat} WHERE disco = '{record}'"""
         print(sql)
 
         if (
