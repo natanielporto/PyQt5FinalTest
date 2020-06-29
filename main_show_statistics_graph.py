@@ -35,7 +35,12 @@ class Show_statistics_graph_window(QDialog, Ui_Dialog):
                 cursor.execute(sql)
                 self.graph = cursor.fetchall()
             except ProgrammingError as e:
-                print(f"Erro: {e.msg}")
+                msg = QMessageBox()
+                msg.setWindowTitle("Erro:")
+                msg.setText("Dados insuficientes para exibir o gráfico.")
+                msg.setIcon(QMessageBox.Critical)
+                msg.exec_()
+                return
 
     def graph_by_artist(self):
         arq = open("graph_by_artist.html", "w", encoding="utf-8")
@@ -124,7 +129,6 @@ class Show_statistics_graph_window(QDialog, Ui_Dialog):
 
     def display_graph_donut(self):
         list1 = list(map(lambda x: x[6], self.graph))
-        print(list1)
         list2 = pandas.DataFrame(list1, columns=["GOAT"])
         list3 = list2.groupby("GOAT").GOAT.count()
 

@@ -3,6 +3,7 @@ from show_statistics_text import Ui_Dialog
 from banco import db_connect
 from mysql.connector.errors import ProgrammingError
 from typing import List
+import math
 
 db_data: List[tuple] = []
 
@@ -22,26 +23,30 @@ class Show_statistics_text_window(QDialog, Ui_Dialog):
         self.sql_query("SELECT gravadora FROM metal GROUP BY gravadora")
         self.ui.total_record_labels_show.setText(str(len(self.db_data)))
 
-        self.sql_query("SELECT SUM(faixas) FROM metal")
-        self.ui.total_tracks_sum_show.setText(str(self.db_data))
+        self.sql_query("SELECT faixas FROM metal")
+        list_tracks = list(map(lambda x: x[0], self.db_data))
+        sum = 0
+        for track in list_tracks:
+            sum += track
+        self.ui.total_tracks_sum_show.setText(str(sum))
 
-        self.sql_query("SELECT ROUND(AVG(faixas)) FROM metal")
-        self.ui.average_tracks_show.setText(str(self.db_data))
+        avg = sum / len(list_tracks)
+        self.ui.average_tracks_show.setText(str(math.ceil(avg)))
 
         self.sql_query("SELECT MAX(nota) FROM metal")
-        self.ui.best_record_score_show.setText(str(self.db_data))
+        self.ui.best_record_score_show.setText(str(self.db_data[0][0]))
 
         self.sql_query("SELECT MIN(nota) FROM metal")
-        self.ui.worst_score_record_show.setText(str(self.db_data))
+        self.ui.worst_score_record_show.setText(str(self.db_data[0][0]))
 
         self.sql_query("SELECT AVG(nota) FROM metal")
-        self.ui.average_record_score_show.setText(str(self.db_data))
+        self.ui.average_record_score_show.setText(str(self.db_data[0][0]))
 
         self.sql_query("SELECT MAX(duracao) FROM metal")
-        self.ui.longest_record_show.setText(str(self.db_data))
+        self.ui.longest_record_show.setText(str(self.db_data[0][0]))
 
         self.sql_query("SELECT MIN(duracao) FROM metal")
-        self.ui.shortest_record_show.setText(str(self.db_data))
+        self.ui.shortest_record_show.setText(str(self.db_data[0][0]))
 
         self.sql_query("SELECT goat FROM metal where goat=1")
         self.ui.total_goats_show.setText(str(len(self.db_data)))

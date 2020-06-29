@@ -25,7 +25,7 @@ class Search_record_window(QDialog, Ui_Dialog):
                 if len(update_query) == 0:
                     msg = QMessageBox()
                     msg.setWindowTitle("Erro:")
-                    msg.setText("Nenhum disco com este nome para ser alterado.")
+                    msg.setText("Nenhum disco encontrado com este nome.")
                     msg.setIcon(QMessageBox.Critical)
                     msg.exec_()
                     return
