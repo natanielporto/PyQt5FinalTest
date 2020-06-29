@@ -10,6 +10,7 @@ from main_search_record_label import Search_record_label_window
 from main_search_top import Search_top_window
 from main_search_goat import Search_goat_window
 from main_show_statistics_text import Show_statistics_text_window
+from main_show_statistics_graph import Show_statistics_graph_window
 
 
 class MainWindow(QMainWindow):
@@ -31,6 +32,7 @@ class MainWindow(QMainWindow):
         self.ui.actionPor_melhores.triggered.connect(self.main_search_top)
         self.ui.actionPor_GOATs.triggered.connect(self.main_search_goat)
         self.ui.actionPor_numeros.triggered.connect(self.main_show_statistics_text)
+        self.ui.actionPor_graficos.triggered.connect(self.main_show_statistics_graph)
 
     def main_add_remove_record(self):
         sub = QMdiSubWindow()
@@ -99,6 +101,14 @@ class MainWindow(QMainWindow):
     def main_show_statistics_text(self):
         sub = QMdiSubWindow()
         updt = Show_statistics_text_window()
+        sub.setWidget(updt)
+        self.ui.mdiArea.addSubWindow(sub)
+        sub.setFixedSize(545, 550)
+        sub.show()
+
+    def main_show_statistics_graph(self):
+        sub = QMdiSubWindow()
+        updt = Show_statistics_graph_window()
         sub.setWidget(updt)
         self.ui.mdiArea.addSubWindow(sub)
         sub.setFixedSize(545, 550)

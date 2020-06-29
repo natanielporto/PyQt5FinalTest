@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Gravadora', 'Nº de artistas'],
+        ['Boycott', 1],['Candlelight', 1],['EMI', 17],['Harvest', 1],['Listenable', 2],['Music for Nations', 1],['Roadrunner', 3],['Warner Music  Japan', 1],['a', 1],]);
+            var options = {
+              title: 'Gráfico de número de artistas por gravadora.',
+              legend: 'none',
+              pieSliceText: 'label',
+              slices: {  2: {offset: 0.3},
+                         4: {offset: 0.1},
+                         6: {offset: 0.2},
+              },
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+        </script>
+        </head>
+    <body>
+        <div id="piechart" style="width: 452px; height: 335px;"></div>
+    </body>
+    </html>
