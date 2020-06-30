@@ -1,7 +1,9 @@
 # PyQt5TrabalhoFinal
 
-Por enquanto, este é um repo WIP.
-For now, this is a WIP.
+# PyQt5FinalTest
 
-Assim que terminar explico melhor o projeto como um todo.
-As soon as I finish this, I'll provide more explanation about the project.
+This was made for the data structure class, with Python and PyQt5.
+Since I always forget some of my favorite bands, I did this so I never forget anymore.
+
+Trabalho feito para estrutura de dados, com Python e PyQt5.
+Para ajudar a lembrar de todas as minhas bandas favoritas.
